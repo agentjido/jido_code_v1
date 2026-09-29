@@ -2,22 +2,31 @@
 
 <!-- covers: package.jido_code.version_controlled_quality_surfaces -->
 
-[![CI](https://github.com/mikehostetler/jido_code/actions/workflows/ci.yml/badge.svg)](https://github.com/mikehostetler/jido_code/actions/workflows/ci.yml)
+> [!IMPORTANT]
+> This repository is historical and unsupported. It has no live deployment,
+> supported desktop installation, published package, or successor. The source
+> remains available for reference. No new features, fixes, releases, or support
+> are planned.
 
-Jido.Code is the primary product and implementation repo in this workspace. It is a Phoenix + LiveView application built on the embedded triple-store control plane and the Jido runtime, with a separate Tauri desktop packaging path.
+Jido.Code was an experimental Phoenix + LiveView application built on an
+embedded triple-store control plane and the Jido runtime. It also had a Tauri
+desktop packaging path.
 
-Status today is alpha and developer-focused. The repo is real, runnable software, but it is still evolving toward the broader product shape described in the repo-local spec workspace.
+The final source is incomplete and has known failing checks. Do not use it for a
+new production system. There is no migration target because there is no
+successor project.
 
 <!-- covers: docs.product_foundation.readme_quickstart_present -->
 <!-- covers: docs.operator_provider_auth_guide.local_quickstart_excludes_operator_setup -->
 <!-- covers: docs.product_foundation.readme_source_graph_orientation_present -->
-## Quickstart
+## Historical Local Use
 
-Normal repository development uses the repo root and repository-local embedded store state.
+These commands are for source review and local experiments only. They do not
+describe a supported product.
 
 ```bash
-git clone https://github.com/mikehostetler/jido_code.git
-cd jido_code
+git clone https://github.com/agentjido/jido_code_v1.git
+cd jido_code_v1
 
 asdf install
 mix setup
@@ -26,11 +35,13 @@ mix server
 
 Then open http://localhost:4100
 
-For normal local development, leave `DATABASE_URL` unset. `mix setup` installs dependencies and builds assets. `mix server` is the preferred start path and prepares browser dependencies or bundles first when the current LiveVue/Vite output is missing. Desktop packaging is separate and lives in [`tauri/README.md`](https://github.com/mikehostetler/jido_code/blob/main/tauri/README.md).
+For local review, leave `DATABASE_URL` unset. `mix setup` installs dependencies
+and builds assets. The historical desktop packaging notes are in
+[`tauri/README.md`](https://github.com/agentjido/jido_code_v1/blob/main/tauri/README.md).
 
 ## What This Repo Contains
 
-Jido.Code currently centers on a few concrete areas:
+The final source contains these areas:
 
 - a Phoenix web app with product-owned sign-in, settings, setup, and dashboard/workbench routes
 - a repo-scoped conversation orchestration layer with interruptible turns, durable event history, bounded shared context, and governed work steering
@@ -39,7 +50,8 @@ Jido.Code currently centers on a few concrete areas:
 - Jido-oriented command, skill, and workflow task surfaces for local operator and developer use
 - a Tauri desktop packaging path that wraps the Phoenix backend as a sidecar application
 
-The product direction is still broader than the currently finished UX. Treat this repo as a working implementation base, not a finished end-user product.
+Treat this repository as historical source, not as an implementation base or a
+finished end-user product.
 
 For new repo work, prefer canonical repository or managed-repository language
 and governed-run terms. Keep `Project` and `WorkflowRun` references confined to
@@ -192,12 +204,12 @@ mix workflow.run my_workflow --inputs '{"file_path":"lib/example.ex","mode":"ful
 
 The canonical repo-facing guides now live here:
 
-- [`docs/developer/README.md`](https://github.com/mikehostetler/jido_code/blob/main/docs/developer/README.md) for the numbered developer architecture guide set
-- [`CONTRIBUTING.md`](https://github.com/mikehostetler/jido_code/blob/main/CONTRIBUTING.md) for contributor setup and quality expectations
-- [`memory_ontology_guide.md`](https://github.com/mikehostetler/jido_code/blob/main/memory_ontology_guide.md) for the developer-facing explanation of the coding memory ontology
-- [`tauri/README.md`](https://github.com/mikehostetler/jido_code/blob/main/tauri/README.md) for the separate desktop packaging/runtime path
-- [`CHANGELOG.md`](https://github.com/mikehostetler/jido_code/blob/main/CHANGELOG.md) for release history
-- [`AGENTS.md`](https://github.com/mikehostetler/jido_code/blob/main/AGENTS.md) for local agent operating guidance in this repo
+- [`docs/developer/README.md`](https://github.com/agentjido/jido_code_v1/blob/main/docs/developer/README.md) for the numbered developer architecture guide set
+- [`CONTRIBUTING.md`](https://github.com/agentjido/jido_code_v1/blob/main/CONTRIBUTING.md) for the retirement policy
+- [`memory_ontology_guide.md`](https://github.com/agentjido/jido_code_v1/blob/main/memory_ontology_guide.md) for the historical coding memory ontology
+- [`tauri/README.md`](https://github.com/agentjido/jido_code_v1/blob/main/tauri/README.md) for the historical desktop packaging path
+- [`CHANGELOG.md`](https://github.com/agentjido/jido_code_v1/blob/main/CHANGELOG.md) for release history
+- [`AGENTS.md`](https://github.com/agentjido/jido_code_v1/blob/main/AGENTS.md) for repository operating rules
 
 ## Semantic Memory
 
@@ -236,7 +248,7 @@ run `mix memory.verify`.
 
 For operational guidance on configuration, troubleshooting, and production
 deployment of the memory graph capability, see the
-[Memory Graph Operations Guide](https://github.com/mikehostetler/jido_code/blob/main/.planning/memory_graph_operations.md).
+[Memory Graph Operations Guide](https://github.com/agentjido/jido_code_v1/blob/main/.planning/memory_graph_operations.md).
 
 ## Repo Shape
 
@@ -266,8 +278,9 @@ test/     tests and support code
 
 ## Release Notes
 
-Release automation is version-controlled in [`.github/workflows/release.yml`](https://github.com/mikehostetler/jido_code/blob/main/.github/workflows/release.yml). Keep [`CHANGELOG.md`](https://github.com/mikehostetler/jido_code/blob/main/CHANGELOG.md) current, run the relevant quality and spec checks, and cut releases from the workflow instead of relying on ad hoc local release steps.
+Release automation is retired. This repository has no GitHub release, Git tag,
+or Hex package. Do not publish a new release from this source.
 
 ## License
 
-Apache-2.0 — see [LICENSE](https://github.com/mikehostetler/jido_code/blob/main/LICENSE) for details.
+Apache-2.0 — see [LICENSE](https://github.com/agentjido/jido_code_v1/blob/main/LICENSE) for details.

@@ -2,14 +2,18 @@
 
 <!-- covers: package.jido_code.version_controlled_quality_surfaces -->
 
-Thank you for your interest in contributing to JidoCode! This document provides guidelines for contributing.
+This repository is historical and unsupported. It does not accept new features,
+routine fixes, support requests, or releases. There is no successor project.
+
+Only repository owners can approve retirement, legal, or critical security
+changes. Use a branch and pull request for an approved change.
 
 ## Development Setup
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mikehostetler/jido_code.git
-   cd jido_code
+   git clone https://github.com/agentjido/jido_code_v1.git
+   cd jido_code_v1
    ```
 
 2. Install the repo toolchain:
@@ -222,27 +226,23 @@ git commit -m "docs: update installation instructions"
 
 ## Pull Request Process
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feat/my-feature`
-3. Make your changes
-4. Run merge-safe quality checks: `mix q`
-5. If you touched the browser stack, run `mix frontend.verify`
-6. Run tests: `mix coveralls`
-7. Commit using conventional commits
-8. Push and open a Pull Request
+Do not open a pull request without prior owner approval. For an approved change:
+
+1. Create a narrow branch.
+2. Make only the approved retirement, legal, or critical security change.
+3. Run the checks that apply to the changed files.
+4. Use a Conventional Commit.
+5. Open a pull request and state the owner approval.
 
 ## Release Workflow
 
-Release automation is kept in `.github/workflows/release.yml` and should remain the source of truth for maintainers. Prepare releases from repository state by updating `CHANGELOG.md`, verifying `mix q`, `mix coveralls`, and the relevant spec checks, then running the version-controlled GitHub workflow instead of relying on undocumented local release steps. Use `mix quality` as the broader local debt-surfacing pass when working through Dialyzer- or Doctor-sensitive changes.
+Release automation is retired. Do not create a tag, GitHub release, Hex package,
+or deployment from this repository.
 
 ## Reporting Issues
 
-When reporting issues, please include:
-
-- Elixir/OTP version (`elixir --version`)
-- Steps to reproduce
-- Expected vs actual behavior
-- Relevant logs or error messages
+The repository does not accept support requests. Report only a critical security
+or legal concern to the repository owner through a private channel.
 
 ## Code of Conduct
 
