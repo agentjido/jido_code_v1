@@ -7,8 +7,8 @@ defmodule JidoCode.MixProject do
   use Mix.Project
 
   @version "0.1.0"
-  @source_url "https://github.com/mikehostetler/jido_code"
-  @description "Primary Jido.Code product and implementation repository."
+  @source_url "https://github.com/agentjido/jido_code_v1"
+  @description "Historical and unsupported Jido.Code V1 source."
   @erlang_rocksdb_opts "-DWITH_BUNDLE_SNAPPY=ON -DWITH_BUNDLE_LZ4=OFF -DWITH_LZ4=TRUE"
 
   if System.get_env("ERLANG_ROCKSDB_OPTS") in [nil, ""] do
@@ -31,7 +31,7 @@ defmodule JidoCode.MixProject do
       name: "Jido.Code",
       description: @description,
       source_url: @source_url,
-      homepage_url: "https://jido.run",
+      homepage_url: @source_url,
       package: package(),
       test_coverage: [
         tool: ExCoveralls,
@@ -130,7 +130,7 @@ defmodule JidoCode.MixProject do
       links: %{
         "Documentation" => "#{@source_url}#documentation",
         "GitHub" => @source_url,
-        "Website" => "https://jido.run"
+        "Repository status" => @source_url
       }
     ]
   end

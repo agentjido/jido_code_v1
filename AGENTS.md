@@ -4,23 +4,28 @@
 
 ## Mission
 
-Implement and evolve `jido_code` as the primary product and implementation repo in this workspace.
+Preserve `jido_code_v1` as a historical and unsupported repository.
 
 <!-- covers: package.jido_code.primary_implementation_repo -->
 
-`jido_os` is an upstream/runtime-contract helper repo. `jido_ecosystem` is reference material for governance behavior that will eventually migrate here. Default to working in `jido_code`.
+There is no successor project. Do not add features, publish releases, restore
+deployments, or present this repository as an active product. Only make
+retirement, legal, or critical security changes that have explicit owner
+approval.
 
 ## First Read
 
-1. Read the relevant code, routes, and tests before changing behavior.
-2. For non-trivial work, prefer a branch and pull request instead of changes that would land directly on `main`.
+1. Read the retirement notice in `README.md`.
+2. Preserve source history and user safety.
+3. Use a branch and pull request for every approved change.
 
 ## Work Management
 
 <!-- covers: collaboration.workflow.github_prs -->
 
-- For shared work, discovered bugs, and meaningful feature changes, prefer GitHub issues and pull requests.
-- Do not land work directly on `main`. Use a branch + PR flow for collaboration.
+- Do not open feature or routine maintenance work.
+- Do not land work directly on `main`. Use a branch and pull request for each
+  approved retirement, legal, or critical security change.
 
 ## Engineering Guardrails
 
